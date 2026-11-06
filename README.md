@@ -4,6 +4,9 @@
 
 **Abyssal Terminal: Mariana OS** is a real-time, command-line interface (CLI) survival horror simulation game. You play as a remote operator tasked with guiding a fragile, multi-million dollar bathyscaphe down to the absolute bottom of the Mariana Trench (10,900 meters) to extract rare minerals. 
 
+<img width="1000" height="522" alt="image" src="https://github.com/user-attachments/assets/a55e23cb-4cf9-4b1b-b7ba-d4362b69c579" />
+
+
 There are no windows. No joysticks. Your only connection to the vessel is a simulated CRT terminal, a raw telemetry feed, and a degrading umbilical text link. 
 
 ## ✨ Key Features
