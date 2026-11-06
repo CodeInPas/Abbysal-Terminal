@@ -1,0 +1,441 @@
+object frmMain: TfrmMain
+  Left = 250
+  Height = 720
+  Top = 150
+  Width = 1280
+  Caption = 'ABYSSAL TERMINAL : MARIANA OS'
+  ClientHeight = 720
+  ClientWidth = 1280
+  Color = 1053708
+  Font.Color = clWhite
+  Font.Height = -12
+  Font.Name = 'Consolas'
+  Menu = MainMenu1
+  Position = poScreenCenter
+  LCLVersion = '4.8.0.0'
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnShow = FormShow
+  object pnlTerminal: TPanel
+    Left = 0
+    Height = 720
+    Top = 0
+    Width = 884
+    Align = alClient
+    BevelOuter = bvNone
+    ClientHeight = 720
+    ClientWidth = 884
+    Color = 526341
+    ParentBackground = False
+    ParentColor = False
+    TabOrder = 0
+    object pbTerminal: TPaintBox
+      Left = 0
+      Height = 720
+      Top = 0
+      Width = 884
+      Align = alClient
+      OnPaint = pbTerminalPaint
+    end
+  end
+  object pnlControl: TPanel
+    Left = 889
+    Height = 710
+    Top = 5
+    Width = 386
+    Align = alRight
+    BorderSpacing.Around = 5
+    BevelOuter = bvNone
+    ClientHeight = 710
+    ClientWidth = 386
+    Color = 11845038
+    ParentBackground = False
+    ParentColor = False
+    TabOrder = 1
+    object gbPower: TGroupBox
+      Left = 5
+      Height = 135
+      Top = 5
+      Width = 376
+      Align = alTop
+      BorderSpacing.Around = 5
+      Caption = '[POWER ROUTING]'
+      ClientHeight = 116
+      ClientWidth = 372
+      ParentBackground = False
+      TabOrder = 0
+      object lblEng: TLabel
+        AnchorSideLeft.Control = gbPower
+        Left = 3
+        Height = 14
+        Top = 10
+        Width = 42
+        BorderSpacing.Left = 3
+        Caption = 'ENGINE'
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Consolas'
+        ParentColor = False
+        ParentFont = False
+      end
+      object tbEngine: TTrackBar
+        AnchorSideRight.Control = gbPower
+        AnchorSideRight.Side = asrBottom
+        Left = 70
+        Height = 25
+        Top = 5
+        Width = 298
+        Max = 100
+        Position = 80
+        TickStyle = tsNone
+        OnChange = tbPowerChange
+        Anchors = [akTop, akLeft, akRight]
+        BorderSpacing.Right = 4
+        TabOrder = 0
+      end
+      object lblSnr: TLabel
+        AnchorSideLeft.Control = gbPower
+        Left = 3
+        Height = 14
+        Top = 35
+        Width = 35
+        BorderSpacing.Left = 3
+        Caption = 'SONAR'
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Consolas'
+        ParentColor = False
+        ParentFont = False
+      end
+      object tbSonar: TTrackBar
+        AnchorSideRight.Control = gbPower
+        AnchorSideRight.Side = asrBottom
+        Left = 70
+        Height = 25
+        Top = 30
+        Width = 298
+        Max = 100
+        Position = 100
+        TickStyle = tsNone
+        OnChange = tbPowerChange
+        Anchors = [akTop, akLeft, akRight]
+        BorderSpacing.Right = 4
+        TabOrder = 1
+      end
+      object lblDrl: TLabel
+        AnchorSideLeft.Control = gbPower
+        Left = 3
+        Height = 14
+        Top = 60
+        Width = 35
+        BorderSpacing.Left = 3
+        Caption = 'DRILL'
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Consolas'
+        ParentColor = False
+        ParentFont = False
+      end
+      object tbDrill: TTrackBar
+        AnchorSideRight.Control = gbPower
+        AnchorSideRight.Side = asrBottom
+        Left = 70
+        Height = 25
+        Top = 55
+        Width = 298
+        Max = 100
+        Position = 0
+        TickStyle = tsNone
+        OnChange = tbPowerChange
+        Anchors = [akTop, akLeft, akRight]
+        BorderSpacing.Right = 4
+        TabOrder = 2
+      end
+      object lblCor: TLabel
+        AnchorSideLeft.Control = gbPower
+        Left = 3
+        Height = 14
+        Top = 85
+        Width = 49
+        BorderSpacing.Left = 3
+        Caption = 'CORE OS'
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Consolas'
+        ParentColor = False
+        ParentFont = False
+      end
+      object tbCore: TTrackBar
+        AnchorSideRight.Control = gbPower
+        AnchorSideRight.Side = asrBottom
+        Left = 70
+        Height = 25
+        Top = 80
+        Width = 298
+        Max = 100
+        Position = 100
+        TickStyle = tsNone
+        OnChange = tbPowerChange
+        Anchors = [akTop, akLeft, akRight]
+        BorderSpacing.Right = 4
+        TabOrder = 3
+      end
+    end
+    object gbCharts: TGroupBox
+      Left = 5
+      Height = 258
+      Top = 145
+      Width = 376
+      Align = alTop
+      BorderSpacing.Around = 5
+      Caption = '[SIGNAL ANALYSIS]'
+      ClientHeight = 239
+      ClientWidth = 372
+      ParentBackground = False
+      TabOrder = 1
+      object chartAudio: TChart
+        Left = 6
+        Height = 100
+        Top = 6
+        Width = 360
+        AxisList = <        
+          item
+            Marks.LabelBrush.Style = bsClear
+            Minors = <>
+            Title.LabelFont.Orientation = 900
+            Title.LabelBrush.Style = bsClear
+          end        
+          item
+            Alignment = calBottom
+            Marks.LabelBrush.Style = bsClear
+            Minors = <>
+            Title.LabelBrush.Style = bsClear
+          end>
+        BackColor = 526341
+        Title.Text.Strings = (
+          'AUDIO FFT SPECTRUM'
+        )
+        Title.Visible = True
+        Align = alTop
+        BorderSpacing.Around = 6
+        Color = 1053708
+        object serAudio: TLineSeries
+          LinePen.Color = 6749952
+          LinePen.Width = 2
+        end
+      end
+      object chartHull: TChart
+        Left = 6
+        Height = 121
+        Top = 112
+        Width = 360
+        AxisList = <        
+          item
+            Marks.LabelBrush.Style = bsClear
+            Minors = <>
+            Title.LabelFont.Orientation = 900
+            Title.LabelBrush.Style = bsClear
+          end        
+          item
+            Alignment = calBottom
+            Marks.LabelBrush.Style = bsClear
+            Minors = <>
+            Title.LabelBrush.Style = bsClear
+          end>
+        BackColor = 526341
+        Title.Text.Strings = (
+          'HULL STRESS CURVE'
+        )
+        Title.Visible = True
+        Align = alClient
+        BorderSpacing.Around = 6
+        Color = 1053708
+        object serHull: TLineSeries
+          LinePen.Color = 3735316
+          LinePen.Width = 2
+        end
+      end
+    end
+    object gbData: TGroupBox
+      Left = 5
+      Height = 100
+      Top = 408
+      Width = 376
+      Align = alTop
+      BorderSpacing.Around = 5
+      Caption = '[DATA LOG & SETTINGS]'
+      ClientHeight = 81
+      ClientWidth = 372
+      ParentBackground = False
+      TabOrder = 2
+      object lblMinerals: TLabel
+        Left = 6
+        Height = 14
+        Top = 6
+        Width = 360
+        Align = alTop
+        BorderSpacing.Around = 6
+        Caption = 'MINERAL SAMPLES : [00]'
+        ParentColor = False
+      end
+      object rgTheme: TRadioGroup
+        AnchorSideLeft.Control = gbData
+        AnchorSideBottom.Control = gbData
+        AnchorSideBottom.Side = asrBottom
+        Left = 3
+        Height = 49
+        Top = 28
+        Width = 160
+        Anchors = [akLeft, akBottom]
+        AutoFill = True
+        BorderSpacing.Left = 3
+        BorderSpacing.Bottom = 4
+        Caption = 'CRT THEME'
+        ChildSizing.LeftRightSpacing = 6
+        ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+        ChildSizing.EnlargeVertical = crsHomogenousChildResize
+        ChildSizing.ShrinkHorizontal = crsScaleChilds
+        ChildSizing.ShrinkVertical = crsScaleChilds
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 2
+        ClientHeight = 30
+        ClientWidth = 156
+        Columns = 2
+        ItemIndex = 0
+        Items.Strings = (
+          'GREEN'
+          'AMBER'
+        )
+        ParentBackground = False
+        TabOrder = 0
+        OnClick = rgThemeClick
+      end
+      object chkScanlines: TCheckBox
+        AnchorSideBottom.Control = btnStartMission
+        Left = 232
+        Height = 18
+        Top = 27
+        Width = 81
+        Anchors = [akBottom]
+        BorderSpacing.Bottom = 3
+        Caption = 'SCANLINES'
+        Checked = True
+        State = cbChecked
+        TabOrder = 1
+        OnChange = chkScanlinesChange
+      end
+      object btnStartMission: TButton
+        AnchorSideRight.Control = gbData
+        AnchorSideRight.Side = asrBottom
+        AnchorSideBottom.Control = gbData
+        AnchorSideBottom.Side = asrBottom
+        Left = 232
+        Height = 30
+        Top = 48
+        Width = 137
+        Anchors = [akRight, akBottom]
+        BorderSpacing.Right = 3
+        BorderSpacing.Bottom = 3
+        Caption = 'START NEW MISSION'
+        Enabled = False
+        TabOrder = 2
+        OnClick = btnStartMissionClick
+      end
+    end
+    object Panel1: TPanel
+      Left = 0
+      Height = 197
+      Top = 513
+      Width = 386
+      Align = alClient
+      BevelOuter = bvNone
+      ClientHeight = 197
+      ClientWidth = 386
+      ParentBackground = False
+      TabOrder = 3
+      object lblCLI: TLabel
+        Left = 5
+        Height = 14
+        Top = 5
+        Width = 376
+        Align = alTop
+        BorderSpacing.Around = 5
+        Caption = '[CLI & SYSTEM LOGS]'
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Consolas'
+        ParentColor = False
+        ParentFont = False
+      end
+      object memLog: TMemo
+        Left = 3
+        Height = 144
+        Top = 24
+        Width = 380
+        Align = alClient
+        BorderSpacing.Around = 3
+        BorderStyle = bsNone
+        Color = 526341
+        Font.Color = 3735316
+        Font.Height = -12
+        Font.Name = 'Consolas'
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 0
+      end
+      object edtCLI: TEdit
+        Left = 2
+        Height = 24
+        Top = 171
+        Width = 382
+        Align = alBottom
+        AutoSize = False
+        AutoSelect = False
+        BorderSpacing.Around = 2
+        BorderStyle = bsNone
+        Color = 526341
+        Font.Color = 3735316
+        Font.Height = -12
+        Font.Name = 'Consolas'
+        ParentFont = False
+        TabOrder = 1
+        TextHint = 'MARIANA_OS> Type command here...'
+        OnKeyDown = edtCLIKeyDown
+        OnKeyPress = edtCLIKeyPress
+      end
+    end
+  end
+  object tmrEngine: TTimer
+    Enabled = False
+    Interval = 16
+    OnTimer = tmrEngineTimer
+    Left = 48
+    Top = 48
+  end
+  object MainMenu1: TMainMenu
+    Left = 195
+    Top = 158
+    object MenuItem1: TMenuItem
+      Caption = 'Application'
+      object mnExit: TMenuItem
+        Caption = 'Exit'
+        OnClick = mnExitClick
+      end
+    end
+    object mnHelp: TMenuItem
+      Caption = 'Help'
+      object mnTutorialIND: TMenuItem
+        Caption = 'Tutorial IND'
+      end
+      object mnTutorialENG: TMenuItem
+        Caption = 'Tutorial ENG'
+      end
+      object Separator1: TMenuItem
+        Caption = '-'
+      end
+      object mnAbout: TMenuItem
+        Caption = 'About Me'
+      end
+    end
+  end
+end
